@@ -40,7 +40,7 @@
     cursor: pointer;
 }
 .image-slider .controller em:hover{
-    color: grey !important;
+    color: cyan !important;
 }
 .image-slider .controller .next{
     right: 0;
