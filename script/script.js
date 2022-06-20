@@ -7,7 +7,7 @@ var section_count ;
 
 var timer = 10000;
 
-var video_class ;
+var video_class;
 
 $(document).ready(function(){
     
@@ -50,6 +50,9 @@ function video(){
     }
 }
 function controller(className){
+    $('.image-slider video').each(function(index){
+        $(this).get(0).pause();
+    });
     if(now_section < section_count){
         if(className == "next"){
             $('.image-slider .section'+now_section).css('display','none');
