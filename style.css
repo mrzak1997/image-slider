@@ -50,19 +50,17 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endCo
     display:block;
 }
 .image-slider .controller em{
-    color:red !important;
-    font-style:bold;
-    font-weight: 900;
-    font-size: 35px;
-    display: block;
-    width: 10%;
-    height:auto;
+    background-image: url(images/blue-arrow.png);
+    background-size:100% auto;
+    width:30px;
+    height: 30px;;
     position: absolute;
     cursor: pointer;
     z-index:99999999999999;
 }
 .image-slider .controller em:hover{
     color: cyan !important;
+    background-image:url(images/red-arrow.png);
 }
 .image-slider .controller .next{
     right: 0;
@@ -121,4 +119,28 @@ transform: rotate(180deg) !important;
     float:right !important;
     right:0 !important;
     bottom:0 !important;
+}
+@media only screen and (max-width:810px) {
+    .image-slider{
+        width:70% !important;
+        height:300px !important;
+    }
+    .image-slider video{
+        height:300px;
+    }
+    .image-slider img{
+        height:300px;
+    }
+}
+@media only screen and (max-width:572px) {
+    .image-slider{
+        width:90% !important;
+        height:250px !important;
+    }
+    .image-slider video{
+        height:250px;
+    }
+    .image-slider img{
+        height:250px;
+    }
 }

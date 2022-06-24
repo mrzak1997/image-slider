@@ -9,14 +9,37 @@ var timer = 10000;
 
 var video_class;
 
+var firstY,secondY;
+
 $(document).ready(function(){
     
     set_class();
+    document.querySelector('.image-slider').addEventListener("touchstart",touchstart_function,false);
+    document.querySelector('.image-slider').addEventListener("touchend",touchend_function,false);
+
+    function getTouches(evt) {
+        return evt.touches ||             // browser API
+               evt.originalEvent.touches; // jQuery
+    }  
+    function touchstart_function(evt){
+        const firstTouch = getTouches(evt)[0];                                      
+        //firstX = firstTouch.clientX;                                      
+        firstY = firstTouch.clientY; 
+    }
+    function touchend_function(evt){                                    
+        //secondX = secondTouch.clientX;                                      
+        secondY = evt.changedTouches[0].clientY; 
+
+        if(firstY<secondY){
+            controller("next");
+        }else{
+            controller("pre");
+        }
+    }
+
     var i=0;
     setInterval(function() {
         video_class = ".image-slider .section"+now_section+" video";
-        // console.log(video_class);
-        // console.log($(video_class).length);
         if($(video_class).length){
             video();
         }
